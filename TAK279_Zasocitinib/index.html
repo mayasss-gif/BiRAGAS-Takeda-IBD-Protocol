@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<title>BiRAGAS × TAK-279 (Zasocitinib) · TYK2 Protocol · 3D Blueprint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..800;1,9..144,400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070C1A;--grid:rgba(110,170,255,.07);--ink:#E4ECFF;--mut:#8FA3CC;--cyan:#6EC1FF;--red:#E63946;--gold:#D4A017}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--ink);font-family:"DM Mono",ui-monospace,monospace;overflow:hidden}
+#bp{position:fixed;inset:0;z-index:0;background:
+  linear-gradient(var(--grid) 1px,transparent 1px) 0 0/46px 46px,
+  linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/46px 46px,
+  radial-gradient(circle at 50% 30%,#0E1C3C,#070C1A 72%);}
+#gl{position:fixed;inset:0;z-index:1;pointer-events:none}
+.app{position:fixed;inset:0;z-index:2;display:flex;flex-direction:column;pointer-events:none}
+.hdr{flex:0 0 auto;display:flex;justify-content:space-between;align-items:center;padding:14px 28px}
+.brand{font-family:"Fraunces";font-style:italic;font-weight:700;font-size:24px}.brand .dot{color:var(--red)}
+.hdr .sub{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--mut)}
+.map{flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 18px 4px;flex-wrap:wrap}
+.map .nd{display:flex;flex-direction:column;align-items:center;gap:3px;opacity:.5;transition:all .4s}
+.map .nd.on{opacity:1}
+.map .chip{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:5px 11px;white-space:nowrap;color:var(--ink);background:rgba(7,12,26,.6)}
+.map .nd.on .chip{border-color:var(--c);color:#08101f;background:var(--c);box-shadow:0 0 16px var(--c)}
+.map .lab{font-size:8.5px;letter-spacing:0.1em;color:var(--mut);text-transform:uppercase}
+.map .sep{color:var(--mut);opacity:.5;font-size:13px}
+.stage{flex:1;position:relative;overflow:hidden}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 30px 26px;opacity:0;visibility:hidden;transition:opacity .6s}
+.scene.active{opacity:1;visibility:visible}
+.ph-eyebrow{font-size:13px;letter-spacing:0.32em;text-transform:uppercase;margin-bottom:4px;color:var(--c)}
+.ph-title{font-family:"Fraunces";font-style:italic;font-weight:600;font-size:clamp(24px,3.4vw,46px);margin-bottom:6px}
+.ph-sum{font-family:"Fraunces";font-style:italic;font-size:clamp(14px,1.6vw,21px);color:var(--mut);max-width:1050px;text-align:center;margin-bottom:14px;line-height:1.3}
+.cards{display:flex;gap:18px;justify-content:center;align-items:flex-start;flex-wrap:wrap;max-width:1640px}
+.card{width:280px;display:flex;flex-direction:column}
+.symrow{display:flex;align-items:center;gap:8px;width:100%}
+.gsvg-wrap{flex:0 0 86px}
+.gsvg{width:86px;height:118px;color:var(--c);stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.gsvg text{fill:currentColor;stroke:none;font-family:"DM Mono";font-weight:500}
+.mol{flex:1;height:130px}
+.meta{background:rgba(11,20,40,.62);backdrop-filter:blur(4px);border:1px solid rgba(110,170,255,.2);border-top:3px solid var(--c);border-radius:12px;padding:13px 15px 16px;margin-top:-6px}
+.meta .nm{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:3px;word-break:break-word}
+.meta .algo{font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--c);margin-bottom:7px}
+.meta .desc{font-family:"Fraunces";font-style:italic;font-size:13.5px;line-height:1.3;color:var(--mut)}
+.count{position:absolute;top:6px;right:14px;font-size:11px;letter-spacing:0.2em;color:var(--mut)}
+/* title / fusion */
+.hero{width:min(560px,80vw);height:min(380px,46vh)}
+.big{font-family:"Fraunces";font-style:italic;font-weight:700;font-size:clamp(34px,6vw,92px);line-height:1.0;letter-spacing:-0.02em;text-align:center}
+.big .acc{color:var(--red)}.big .au{color:var(--gold)}
+.lead{font-family:"Fraunces";font-style:italic;font-size:clamp(16px,2.1vw,30px);color:#BFD0F2;max-width:1100px;text-align:center;margin-top:14px;line-height:1.3}
+.tiny{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--mut);margin-top:20px;text-align:center}
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--gold));width:0;z-index:30;transition:width .3s}
+.ctrls{position:fixed;bottom:14px;right:18px;display:flex;gap:8px;z-index:30}
+.ctrls button{pointer-events:auto;font-family:"DM Mono";font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:5px;padding:8px 12px;cursor:pointer}
+.ctrls button:hover{background:var(--cyan);border-color:var(--cyan);color:#08101f}
+.links{position:fixed;bottom:14px;left:18px;display:flex;gap:8px;z-index:30}
+.links a{pointer-events:auto;font-family:"DM Mono";font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mut);text-decoration:none;border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:7px 11px}
+.links a:hover{color:var(--ink);border-color:var(--cyan)}.links a.cine{color:var(--gold);border-color:var(--gold)}
+#begin{position:fixed;inset:0;z-index:40;background:radial-gradient(circle at 50% 40%,#0E1C3C,#070C1A);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;text-align:center;padding:6vw}
+#begin .bt{font-family:"Fraunces";font-style:italic;font-weight:700;font-size:clamp(32px,5.4vw,72px);line-height:1.05}
+#begin .bs{font-family:"Fraunces";font-style:italic;font-size:clamp(16px,2.1vw,27px);color:#BFD0F2;margin:14px 0 32px;max-width:900px}
+#begin button{font-family:"DM Mono";font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:#08101f;background:var(--cyan);border:0;border-radius:40px;padding:16px 36px;cursor:pointer;box-shadow:0 10px 36px rgba(110,193,255,.4)}
+#begin .hint{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--mut);margin-top:22px}
+@media(max-width:860px){.map .lab{display:none}.card{width:46%}.gsvg-wrap{flex:0 0 64px}.gsvg{width:64px}.mol{height:108px}.links{display:none}}
+
+
+/* ===== scrollable + smartphone-friendly ===== */
+.app{pointer-events:none}
+.stage{overflow:hidden}
+.scene{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;justify-content:safe center;pointer-events:auto}
+#begin{overflow-y:auto}
+.ctrls{flex-wrap:wrap;max-width:calc(100vw - 24px);justify-content:flex-end}
+@media(max-width:860px){
+  .hdr{padding:9px 14px}.hdr .sub{display:none}
+  .map{padding:5px 8px 3px;gap:4px}
+  .scene{padding:10px 14px 104px;justify-content:safe flex-start}
+  .ph-eyebrow{font-size:11px;letter-spacing:0.22em}
+  .ph-sum{margin-bottom:12px}
+  .cards{gap:12px}
+  .count{top:auto;bottom:6px;left:8px;right:auto}
+  .ctrls{left:8px;right:8px;bottom:8px;justify-content:center;gap:6px}
+  .ctrls button{font-size:10px;padding:9px 9px;letter-spacing:0.08em}
+}
+@media(max-width:560px){.card{width:100%;max-width:360px}.mol{height:122px}.big{font-size:clamp(30px,8vw,60px)}}
+
+</style></head>
+<body>
+<div id="bp"></div>
+<canvas id="gl"></canvas>
+<div id="prog"></div>
+<div class="app">
+  <div class="hdr"><div class="brand">BiRAGAS<span class="dot">.</span></div><div class="sub">Zasocitinib (TAK-279) · TYK2 · BiRAGAS Solutions · 3D Blueprint</div></div>
+  <div class="map" id="map"></div>
+  <div class="stage" id="stage"></div>
+</div>
+<div class="ctrls"><button id="home">⌂ Home</button><button id="narrate">🔊 Narrate</button><button id="prev">‹ Prev</button><button id="pause">⏸ Pause</button><button id="next">Next ›</button><button id="replay" style="display:none">↻ Replay</button></div>
+<audio id="vo" preload="auto"></audio>
+<div id="begin">
+  <div class="bt">Zasocitinib (TAK-279)<span style="color:var(--red)">.</span></div>
+  <div class="bs">How BiRAGAS — all 28 engines and its agentic pipeline — resolves every bottleneck for Takeda's selective TYK2 inhibitor: TYK2-axis pathways, the TYK2-independent resistance landscape, patient stratification, and the protocol to lift drug efficacy. 25 narrated slides, each a live 3D model.</div>
+  <button id="beginBtn">▶ Enter the 3D blueprint</button>
+  <div class="hint">~7.4 minutes · narrated · 25 slides · 7 parts</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+
+// ---------- SVG glyph helpers ----------
+const N=(x,y,r=5)=>`<circle cx="${x}" cy="${y}" r="${r}"/>`;
+const L=(x1,y1,x2,y2,e="")=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" ${e}/>`;
+function A(x1,y1,x2,y2,sh=9){const a=Math.atan2(y2-y1,x2-x1);const ex=x2-Math.cos(a)*sh,ey=y2-Math.sin(a)*sh;const h=7,s=0.5;
+  return `<line x1="${x1}" y1="${y1}" x2="${ex}" y2="${ey}"/><polyline points="${(ex-Math.cos(a-s)*h).toFixed(1)},${(ey-Math.sin(a-s)*h).toFixed(1)} ${ex.toFixed(1)},${ey.toFixed(1)} ${(ex-Math.cos(a+s)*h).toFixed(1)},${(ey-Math.sin(a+s)*h).toFixed(1)}"/>`;}
+const T=(x,y,s,fs=12)=>`<text x="${x}" y="${y}" font-size="${fs}" text-anchor="middle">${s}</text>`;
+const X=(x,y,c="var(--red)")=>`<g stroke="${c}"><line x1="${x-5}" y1="${y-5}" x2="${x+5}" y2="${y+5}"/><line x1="${x+5}" y1="${y-5}" x2="${x-5}" y2="${y+5}"/></g>`;
+const G={
+ dag:()=>N(22,58)+N(60,18)+N(98,58)+A(26,53,57,23)+A(64,23,95,53)+A(28,58,93,58),
+ mr:()=>N(16,44)+N(60,44)+N(104,44)+N(60,14)+A(22,44,53,44)+A(67,44,97,44)+L(60,19,60,38,'stroke-dasharray="3 3"')+L(64,18,98,38,'stroke-dasharray="3 3"')+T(16,64,'Z',11)+T(60,64,'X',11)+T(104,64,'Y',11)+T(60,10,'U',11),
+ hub:()=>{let s='';const P=[[60,12],[99,27],[99,53],[60,68],[21,53],[21,27]];P.forEach(p=>{s+=L(60,40,p[0],p[1])+N(p[0],p[1],4)});return s+N(60,40,7);},
+ gauge:()=>`<path d="M22,62 A38,38 0 0 1 98,62"/>`+L(60,62,82,34)+N(60,62,3)+L(30,57,33,53)+L(60,24,60,29)+L(90,57,87,53),
+ test:()=>A(18,42,80,42)+`<polyline points="86,42 94,52 108,28"/>`,
+ dir:()=>L(20,46,100,46,'opacity="0.35"')+A(20,30,100,30)+T(60,66,'A → B',12),
+ confound:()=>N(20,58)+N(100,58)+N(60,16)+A(56,21,26,52)+A(64,21,94,52)+A(27,58,93,58)+X(41,36),
+ cf:()=>N(64,42,6)+L(10,24,40,36,'opacity="0.5"')+L(10,60,40,48,'opacity="0.5"')+X(30,30)+X(30,54)+A(72,42,112,42)+T(64,70,'do(X)',12),
+ prop:()=>N(18,42)+N(48,42)+N(78,42)+N(106,42)+A(22,42,44,42)+A(52,42,74,42)+A(82,42,102,42)+`<path d="M14,30 A14,14 0 0 1 14,54" opacity="0.5"/><path d="M8,24 A22,22 0 0 1 8,60" opacity="0.3"/>`,
+ resist:()=>N(18,46)+N(60,46)+N(102,46)+A(23,46,54,46)+X(60,46)+`<path d="M22,40 Q60,8 98,40"/>`+A(90,22,98,40),
+ bypass:()=>N(60,40,6)+X(60,40)+`<path d="M22,48 Q60,82 98,48"/>`+A(90,40,98,48)+L(8,48,16,48),
+ rank:()=>L(14,66,110,66)+`<rect x="18" y="30" width="20" height="36"/><rect x="52" y="40" width="20" height="26"/><rect x="86" y="50" width="20" height="16"/>`+T(28,26,'1',11)+T(62,36,'2',11)+T(96,46,'3',11),
+ drug:()=>`<path d="M28,28 C28,62 92,62 92,28"/>`+N(60,44,8)+L(60,16,60,28,'opacity="0.5"'),
+ curve:()=>L(22,64,22,14)+L(22,64,110,64)+`<path d="M26,60 C52,60 60,22 104,20"/>`,
+ shield:()=>`<path d="M60,14 L96,26 V44 C96,62 60,70 60,70 C60,68 24,62 24,44 V26 Z"/>`+`<polyline points="48,42 57,52 74,30"/>`,
+ combo:()=>L(24,62,24,12)+L(24,62,110,62)+L(30,16,104,56,'stroke-dasharray="3 3" opacity="0.6"')+`<path d="M30,16 Q44,52 104,56"/>`+N(30,16,3)+N(104,56,3),
+ cohort:()=>N(22,40,9)+A(33,38,90,18)+A(34,40,90,40)+A(33,42,90,62)+N(96,18,5)+N(96,40,5)+N(96,62,5),
+ compare:()=>N(18,22)+N(18,52)+N(44,37)+L(18,22,44,37)+L(18,52,44,37)+N(78,22)+N(78,52)+N(104,37)+L(78,22,104,37)+L(78,52,104,37)+T(61,42,'≠',16),
+ motif:()=>N(26,18)+N(26,62)+N(98,40)+A(26,24,26,56)+A(31,21,93,37)+A(31,59,93,43)+T(16,18,'X',11)+T(16,64,'Y',11)+T(108,40,'Z',11),
+ inspect:()=>`<circle cx="50" cy="38" r="20"/>`+L(64,52,86,72)+L(42,34,58,34,'opacity="0.6"')+L(42,42,54,42,'opacity="0.6"'),
+ gap:()=>L(14,40,50,40)+L(52,40,72,40,'stroke-dasharray="2 5"')+L(74,40,110,40)+T(62,26,'?',14),
+ arbiter:()=>L(60,26,60,58)+`<polyline points="50,58 60,46 70,58"/>`+L(28,30,92,30)+L(60,26,60,30)+`<path d="M20,30 L36,30 L31,44 A6,6 0 0 0 25,44 Z" opacity="0.85"/>`+`<path d="M84,30 L100,30 L95,44 A6,6 0 0 0 89,44 Z" opacity="0.85"/>`,
+ dossier:()=>`<rect x="34" y="12" width="52" height="58" rx="3"/>`+L(42,26,78,26,'opacity="0.7"')+L(42,34,78,34,'opacity="0.7"')+L(42,42,70,42,'opacity="0.7"')+`<polyline points="44,56 50,63 64,48"/>`,
+};
+function glyph2d(k){const mp={score:'gauge',ffl:'motif'};const kk=mp[k]||k;return `<svg class="gsvg" viewBox="0 0 120 80">${(G[kk]||G.dag)()}</svg>`;}
+// ════════ shared 3D resources (Atlas-III-3D aesthetic) ════════
+const cv=document.getElementById("gl");
+const renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true,powerPreference:"high-performance"});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setSize(innerWidth,innerHeight);
+renderer.autoClear=false;
+renderer.setClearColor(0x000000,0);
+renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.2;
+addEventListener("resize",()=>renderer.setSize(innerWidth,innerHeight));
+const camera=new THREE.PerspectiveCamera(45,1,0.1,100); camera.position.set(0,0,5.4);
+const sphereGeo=new THREE.SphereGeometry(1,22,22);
+function glowTexture(){const c=document.createElement("canvas");c.width=64;c.height=64;const x=c.getContext("2d");const g=x.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,"rgba(255,255,255,0.85)");g.addColorStop(0.3,"rgba(255,255,255,0.25)");g.addColorStop(1,"rgba(255,255,255,0)");x.fillStyle=g;x.fillRect(0,0,64,64);return new THREE.CanvasTexture(c);}
+const GLOW=glowTexture();
+function lightRig(sc){sc.add(new THREE.AmbientLight(0x33446a,0.7));
+ const d=new THREE.DirectionalLight(0xffffff,1.4);d.position.set(3,5,4);sc.add(d);
+ const p1=new THREE.PointLight(0x00d4ff,0.55,40);p1.position.set(-4,2,4);sc.add(p1);
+ const p2=new THREE.PointLight(0xa855f7,0.45,40);p2.position.set(4,-2,-3);sc.add(p2);}
+function buildScene(nodes,edges,hex){
+  const sc=new THREE.Scene(); lightRig(sc);
+  const group=new THREE.Group(); sc.add(group);
+  const base=new THREE.Color(hex), red=new THREE.Color(0xE63946);
+  nodes.forEach(n=>{
+    const col=n[3]==='r'?red:base;
+    const s=(n[4]||1)*0.40;
+    const mat=new THREE.MeshPhysicalMaterial({color:col,metalness:0.15,roughness:0.28,clearcoat:0.4,clearcoatRoughness:0.4,emissive:col.clone().multiplyScalar(0.35),emissiveIntensity:0.6});
+    const m=new THREE.Mesh(sphereGeo,mat); m.position.set(n[0],n[1],n[2]); m.scale.set(s,s,s); group.add(m);
+    const spr=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:col,blending:THREE.AdditiveBlending,transparent:true,opacity:0.55,depthWrite:false}));
+    spr.position.copy(m.position); spr.scale.set(s*4.2,s*4.2,1); group.add(spr);
+  });
+  if(edges&&edges.length){const ep=[],ec=[];edges.forEach(([a,b])=>{const na=nodes[a],nb=nodes[b];ep.push(na[0],na[1],na[2],nb[0],nb[1],nb[2]);for(let k=0;k<2;k++)ec.push(base.r,base.g,base.b,0.6);});
+   const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(ep,3));g.setAttribute('color',new THREE.Float32BufferAttribute(ec,4));
+   group.add(new THREE.LineSegments(g,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:0.6})));
+   group.add(new THREE.LineSegments(g.clone(),new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:0.16,blending:THREE.AdditiveBlending,depthWrite:false})));}
+  return {scene:sc,group,phase:Math.random()*6.28,spin:0.45+Math.random()*0.2};
+}
+// ════════ molecular MOTIFS (one algorithmic structure per module) ════════
+function ring(n,r,y,z){const a=[];for(let i=0;i<n;i++){const t=i/n*Math.PI*2;a.push([Math.cos(t)*r,(y||0),Math.sin(t)*r*(z||1)]);}return a;}
+const M={
+ dag:{n:[[-1.5,-0.9,0],[0,1.3,.3],[1.5,-0.9,-.2]],e:[[0,1],[1,2],[0,2]]},
+ mr:{n:[[-2,0,0],[0,0,.2],[2,0,0],[0,1.5,-.3,'',0.9]],e:[[0,1],[1,2],[3,1],[3,2]]},
+ hub:{n:[[0,0,0,'',1.3],[1.7,.3,0],[ .9,1.4,.4],[-.9,1.3,-.3],[-1.7,-.2,.5],[-.6,-1.4,-.4],[1.1,-1.2,.3]],e:[[0,1],[0,2],[0,3],[0,4],[0,5],[0,6]]},
+ score:{n:[[-1.6,-1,0,'',.7],[-.5,-.2,.2,'',.85],[.6,.6,-.1],[1.6,1.2,0,'',1.15]],e:[[0,1],[1,2],[2,3]]},
+ test:{n:[[-1.4,0,0],[1.2,0,0],[.2,1.2,.3,'',.8]],e:[[0,1],[1,2]]},
+ dir:{n:[[-1.6,0,0],[0,.1,0],[1.6,0,0]],e:[[0,1],[1,2]]},
+ confound:{n:[[-1.4,-.8,0],[1.4,-.8,0],[0,1.4,0,'r']],e:[[2,0],[2,1],[0,1]]},
+ cf:{n:[[0,0,0,'',1.2],[-1.7,.7,0,'r',.8],[-1.7,-.7,0,'r',.8],[1.7,0,0]],e:[[1,0],[2,0],[0,3]]},
+ prop:{n:[[-1.8,-.4,0],[-.9,.3,.3],[0,.5,0],[.9,.2,-.3],[1.8,-.3,0]],e:[[0,1],[1,2],[2,3],[3,4]]},
+ resist:{n:[[-1.7,0,0],[0,0,0,'r',1.1],[1.7,0,0],[0,1.4,.2,'',.85]],e:[[0,1],[1,2],[0,3],[3,2]]},
+ bypass:{n:[[0,0,0,'r',1.1],[-1.3,.9,0],[0,1.5,.3],[1.3,.9,0]],e:[[1,2],[2,3],[1,0],[3,0]]},
+ rank:{n:[[-1.4,.9,0,'',1.15],[0,.1,0,'',.9],[1.4,-.7,0,'',.7]],e:[[0,1],[1,2]]},
+ drug:{n:[].concat(ring(5,1.4),[[0,0,0,'',.8]]),e:[[0,1],[1,2],[2,3],[3,4],[4,0],[5,0],[5,2]]},
+ curve:{n:[[-1.7,-1,0],[-.9,-.7,.2],[0,0,0],[.9,.7,-.2],[1.7,1,0]],e:[[0,1],[1,2],[2,3],[3,4]]},
+ shield:{n:[[0,0,.2,'',1.0]].concat(ring(5,1.5)),e:[[0,1],[0,2],[0,3],[0,4],[0,5]]},
+ combo:{n:[[-1.6,.6,0],[-1.6,-.6,0],[1.6,.6,0],[1.6,-.6,0],[0,0,.3,'',1.1]],e:[[0,4],[1,4],[2,4],[3,4]]},
+ cohort:{n:[[-1.7,0,0,'',1.2],[1.3,1.1,0],[1.7,0,0],[1.3,-1.1,0]],e:[[0,1],[0,2],[0,3]]},
+ compare:{n:[[-1.9,.6,0],[-1.9,-.6,0],[-.9,0,.2],[.9,0,-.2],[1.9,.6,0],[1.9,-.6,0]],e:[[0,2],[1,2],[3,4],[3,5]]},
+ ffl:{n:[[-1.3,1.2,0],[-1.3,-1.2,0],[1.6,0,0]],e:[[0,1],[0,2],[1,2]]},
+ inspect:{n:ring(6,1.1,0).concat([[1.3,-1.3,0,'',.7],[1.8,-1.8,0,'',.6]]),e:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[6,7]]},
+ gap:{n:[[-1.8,0,0],[-.9,0,.2],[.9,0,-.2,'r',.7],[1.8,0,0]],e:[[0,1],[2,3]]},
+ arbiter:{n:[[0,-.6,0,'',1.0],[-1.6,.5,0],[1.6,.5,0],[-1.6,-.6,0,'',.8],[1.6,-.6,0,'',.8]],e:[[0,1],[0,2],[1,3],[2,4]]},
+ dossier:{n:[[0,1.3,0,'',.95],[0,.45,.1],[0,-.45,-.1],[0,-1.3,0],[1.1,-1.3,0,'',.7]],e:[[0,1],[1,2],[2,3],[3,4]]},
+};
+function makeHero(){
+  const cols=[0xE63946,0xD4A017,0x4C8DFF,0x19C3B2,0xA78BFA,0x46D17F,0xFF8A4C];
+  const nodes=[],edges=[];const centers=[];
+  for(let c=0;c<5;c++){const a=c/5*6.28+0.3;centers.push([Math.cos(a)*1.6,(Math.random()-.5)*1.6,Math.sin(a)*1.6]);}
+  for(let i=0;i<46;i++){const c=centers[i%5];nodes.push([c[0]+(Math.random()-.5)*1.8,c[1]+(Math.random()-.5)*1.6,c[2]+(Math.random()-.5)*1.8]);}
+  for(let i=0;i<70;i++){const a=(Math.random()*46)|0,b=(Math.random()*46)|0;if(a!==b){const dx=nodes[a][0]-nodes[b][0],dy=nodes[a][1]-nodes[b][1],dz=nodes[a][2]-nodes[b][2];if(dx*dx+dy*dy+dz*dz<2.6)edges.push([a,b]);}}
+  // multi-color: build manually (buildScene uses single hex) → tint per node via groups of colors
+  const sc=new THREE.Scene();lightRig(sc);const group=new THREE.Group();sc.add(group);
+  nodes.forEach((n,i)=>{const col=new THREE.Color(cols[i%cols.length]);const s=(0.5+Math.random()*0.5)*0.34;
+    const m=new THREE.Mesh(sphereGeo,new THREE.MeshPhysicalMaterial({color:col,metalness:0.15,roughness:0.28,clearcoat:0.4,emissive:col.clone().multiplyScalar(0.35),emissiveIntensity:0.6}));
+    m.position.set(n[0],n[1]*0.8,n[2]);m.scale.set(s,s,s);group.add(m);
+    const spr=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:col,blending:THREE.AdditiveBlending,transparent:true,opacity:0.4,depthWrite:false}));spr.position.copy(m.position);spr.scale.set(s*4,s*4,1);group.add(spr);});
+  const ep=[],ec=[];edges.forEach(([a,b])=>{ep.push(nodes[a][0],nodes[a][1]*0.8,nodes[a][2],nodes[b][0],nodes[b][1]*0.8,nodes[b][2]);for(let k=0;k<2;k++)ec.push(.6,.7,.9,0.4);});
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(ep,3));g.setAttribute('color',new THREE.Float32BufferAttribute(ec,4));
+  group.add(new THREE.LineSegments(g,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:0.5})));
+  return {scene:sc,group,phase:0,spin:0.3};
+}
+
+
+const CH=[{"short": "Overview", "color": "#4C8DFF", "num": 5017087}, {"short": "Pathways", "color": "#19C3B2", "num": 1688498}, {"short": "Resistance", "color": "#E63946", "num": 15087942}, {"short": "Engines", "color": "#D4A017", "num": 13934615}, {"short": "Agents", "color": "#6EC1FF", "num": 7258623}, {"short": "Protocol", "color": "#2BB0A6", "num": 2863270}, {"short": "Impact", "color": "#A78BFA", "num": 10980346}];
+const SCENES=[{"ch": 0, "kind": "hero", "big": "<span class=\"ph-eyebrow\" style=\"display:block;margin-bottom:10px;font-size:clamp(22px,3vw,40px);letter-spacing:0.16em;font-weight:700\">Zasocitinib (TAK-279)</span>A BiRAGAS <span class=\"acc\">TYK2 Protocol</span>", "lead": "How BiRAGAS &mdash; all 28 engines and its agentic pipeline &mdash; resolves every bottleneck for Takeda's selective TYK2 inhibitor, to enhance patient stratification and ultimately drug efficacy."}, {"ch": 0, "kind": "cards", "eyebrow": "Overview · The challenge", "title": "The TAK-279 bottleneck", "sum": "A selective drug with a hard analytic problem.", "cards": [["Selective TYK2", "mr", "IL-12/IL-23 + type I IFN", "Blocks one kinase; spares JAK1/2/3."], ["No responder dataset", "gap", "public data absent", "Tofacitinib data don't transfer."], ["Resistance is TYK2-independent", "resist", "bypass routes", "TNF/IL-1/OSM/GM-CSF escape."], ["Stratification gap", "compare", "no companion Dx", "Who has TYK2-driven disease?"]]}, {"ch": 0, "kind": "cards", "eyebrow": "Overview · The answer", "title": "What BiRAGAS brings", "sum": "Causal, cell-resolved, per-patient, auditable.", "cards": [["Cell & subcellular map", "dag", "causal-calculus", "Where TAK-279 acts and resistance lives."], ["28 engines + agents", "hub", "agentic pipeline", "From data to causal proof to decision."], ["Per-patient stratification", "cohort", "responder fraction", "TYK2-axis-high vs bypass-dominant."], ["Hallucination shield", "shield", "RAGAS / CCS", "Every claim anchored; TAK-279 flagged."]]}, {"ch": 1, "kind": "hero", "big": "The TYK2 axis<br><span class=\"acc\">pathways &middot; cells &middot; subcellular</span>", "lead": "TAK-279 acts on three cytokine programs, in specific cells, at specific subcellular sites &mdash; all real and GO-anchored."}, {"ch": 1, "kind": "cards", "eyebrow": "Pathways · Targets", "title": "Three target pathways", "sum": "What selective TYK2 inhibition switches off.", "cards": [["IL-23 → Th17", "dag", "STAT3 → RORC", "IL-17/IL-22 mucosal inflammation."], ["IL-12 → Th1", "mr", "STAT4 → TBX21", "IFN-gamma effector axis."], ["Type I IFN", "prop", "ISGF3 → ISGs", "Interferon-stimulated gene program."], ["TYK2 kinase step", "cf", "cyto-side PM GO:0009898", "The single allosteric intervention point."]]}, {"ch": 1, "kind": "cards", "eyebrow": "Pathways · Cells", "title": "Causative cells", "sum": "Sources and responders, from the IBD atlases.", "cards": [["pDC", "hub", "type I IFN source", "Plasmacytoid DC make IFN-alpha."], ["cDC2 / cDC1", "hub", "IL-23 / IL-12 source", "Dendritic cells drive the axis."], ["Th17/ILC3/γδ/CD8-Trm", "combo", "IL-23R responders", "Effector T and innate cells."], ["ISG-hi epithelium", "cohort", "IFN responder", "Interferon-high gut epithelium."]]}, {"ch": 1, "kind": "cards", "eyebrow": "Pathways · Subcellular", "title": "Subcellular sites (GO-CC)", "sum": "Verified Gene-Ontology components.", "cards": [["Receptor complexes", "combo", "IL-23R GO:0072536", "IL-12R GO:0042022 at the membrane."], ["TYK2 docking", "cf", "GO:0009898", "Cytoplasmic side of plasma membrane."], ["ISGF3 complex", "hub", "GO:0070721", "STAT1-STAT2-IRF9 in the nucleus."], ["TF chromatin", "dossier", "GO:0000785", "RORC / TBX21 transcription."]]}, {"ch": 2, "kind": "hero", "big": "Resistance is<br><span class=\"acc\">TYK2-independent</span>", "lead": "The routes that defeat TAK-279 don't use TYK2 at all &mdash; they are the basis of primary non-response."}, {"ch": 2, "kind": "cards", "eyebrow": "Resistance · Bypass", "title": "Four bypass routes", "sum": "Each at a defined subcellular site.", "cards": [["TNF → NF-κB", "resist", "IKK GO:0008385", "No Janus kinase at all."], ["IL-1 → Th17", "bypass", "NLRP3 GO:0072559", "MyD88, not JAK."], ["OSM → OSMR (IAF)", "resist", "GO:0005900", "JAK1/2-biased; spared."], ["GM-CSF → JAK2", "bypass", "GO:0030526", "JAK2, not TYK2."]]}, {"ch": 2, "kind": "cards", "eyebrow": "Resistance · The pivot", "title": "The dual-role myeloid pivot", "sum": "One cell feeds both arms.", "cards": [["Monocyte / macrophage", "hub", "DUAL role", "Source of IL-23/12 AND TNF/IL-1/OSM."], ["Inflammatory fibroblast", "resist", "IAF · OSMR+", "Core TYK2-independent resistance hub."], ["Th17.1", "cf", "refractory", "IFN-gamma+ plastic effector."], ["Partial response", "gap", "explained", "Same cell drives sensitive + resistant."]]}, {"ch": 2, "kind": "cards", "eyebrow": "Resistance · Patients", "title": "Patient incompatibilities", "sum": "Who TAK-279 may fail.", "cards": [["TYK2 P1104A carriers", "mr", "genetic", "Altered baseline TYK2 tone."], ["Bypass-dominant", "resist", "TNF/IL-1/OSM high", "Monotherapy unlikely to work."], ["Fibrostenotic / IAF", "compare", "stromal", "TYK2-independent remodeling."], ["Pharmacogenomic PK", "inspect", "exposure", "Metabolizer variability."]]}, {"ch": 3, "kind": "hero", "big": "28 BiRAGAS engines<br><span class=\"acc\">on TAK-279</span>", "lead": "Each engine resolves a specific cellular or subcellular bottleneck, chained from data to decision."}, {"ch": 3, "kind": "cards", "eyebrow": "Engines · Map the axis", "title": "Ingest & axis mapping", "sum": "Resolve the TYK2 program to cells.", "cards": [["data-retrieval", "cohort", "TYK2 + bypass cohorts", "Assemble the evidence base."], ["deg + total-rna", "dag", "axis & ISG DE", "Define the TYK2 signal."], ["single-cell-analysis", "hub", "pDC/Th17/IAF", "Localize to causative cells."], ["deconvolution", "compare", "blood fractions", "Non-invasive cell readout."]]}, {"ch": 3, "kind": "cards", "eyebrow": "Engines · Causal core", "title": "The causal core", "sum": "Correlation becomes validated causation.", "cards": [["dag-builder", "dag", "fuse evidence", "Build the IBD causal graph."], ["causal-calculus", "cf", "Pearl validation", "Strip spurious edges."], ["centrality-calculator", "rank", "tier nodes", "TYK2 vs bypass ranking."], ["GWAS + MR + SIGNOR", "mr", "genetic anchor", "IL23R / TYK2 P1104A."]]}, {"ch": 3, "kind": "cards", "eyebrow": "Engines · Perturbation", "title": "Perturbation & drugs", "sum": "Simulate, stratify, combine.", "cards": [["in-silico population", "cf", "do-calculus", "Simulate TYK2 inhibition + resistance."], ["in-silico patient", "cohort", "responder fraction", "Per-patient stratification."], ["l1000-analysis", "drug", "reverse signature", "Combinations & MOA anchoring."], ["DepMap + perturbation", "test", "essentiality", "Safety & gene-drug pairs."]]}, {"ch": 3, "kind": "cards", "eyebrow": "Engines · Validate & report", "title": "CRISPR & output", "sum": "Experimental closure and dossier.", "cards": [["perturbseq", "combo", "single-cell CRISPR", "Validate TYK2-axis targets."], ["screening / targeted CRISPR", "test", "screens & edits", "Confirm dependencies."], ["multi-omics / MDP", "compare", "read-across", "UC/CD/psoriasis + PGx."], ["report-generation", "dossier", "auditable", "CDx dossier & figures."]]}, {"ch": 4, "kind": "hero", "big": "The agentic<br><span class=\"acc\">pipeline</span>", "lead": "An orchestrator routes the engines as specialised agents, end to end."}, {"ch": 4, "kind": "cards", "eyebrow": "Agents · Pipeline", "title": "Orchestrated agents", "sum": "One orchestrator, many specialists.", "cards": [["orchestrator / meta", "hub", "plan & route", "Builds the agent chain."], ["causality_pipeline_agent", "cf", "DAG + causal-calculus", "Validated causal network."], ["ipaa_causality", "cohort", "in-silico perturbation", "Population + patient."], ["perturbation + crispr agents", "combo", "drugs + validation", "L1000/DepMap + CRISPR."]]}, {"ch": 5, "kind": "hero", "big": "The protocol<br><span class=\"acc\">WP0 &ndash; WP8</span>", "lead": "Nine engine-grounded work packages, cell- and subcellular-resolved."}, {"ch": 5, "kind": "cards", "eyebrow": "Protocol · WP0–WP3", "title": "Assemble → simulate", "sum": "Data to a TYK2 intervention model.", "cards": [["WP0 · Assemble", "cohort", "retrieval/harmonization/DEG", "TYK2 + bypass corpus."], ["WP1 · Axis transcriptome", "hub", "single-cell/deconv/signor", "Cells & subcellular sites."], ["WP2 · Validated DAG", "cf", "causal-calculus/MR", "Causal TYK2 sub-network."], ["WP3 · TYK2 simulation", "resist", "do-calculus", "Effect + resistance map."]]}, {"ch": 5, "kind": "cards", "eyebrow": "Protocol · WP4–WP8", "title": "Stratify → dossier", "sum": "Patients, combinations, validation, CDx.", "cards": [["WP4 · Stratification", "cohort", "responder fraction", "Companion-Dx signature."], ["WP5 · Combination", "drug", "L1000 + DepMap", "+anti-TNF / +anti-IL-23 / Entyvio."], ["WP6 · CRISPR validate", "test", "perturbseq", "Experimental confirmation."], ["WP8 · CDx dossier", "dossier", "RAGAS/CCS", "Ph2a CD enrichment (NCT07403968)."]]}, {"ch": 6, "kind": "hero", "big": "From bottleneck<br><span class=\"acc\">to solution</span>", "lead": "What this delivers for Takeda's lead IBD pipeline asset."}, {"ch": 6, "kind": "cards", "eyebrow": "Impact · Solved", "title": "Bottlenecks solved", "sum": "Each mapped to engines.", "cards": [["Patient stratification", "cohort", "in-silico patient", "TYK2-axis-high vs bypass."], ["Resistance prediction", "resist", "population sim", "Bypass mapped pre-treatment."], ["No-dataset hypothesis", "cf", "causal anchoring", "TAK-279 responder without data."], ["CDx dossier", "dossier", "RAGAS-gated", "Regulator-ready evidence."]]}, {"ch": 6, "kind": "cards", "eyebrow": "Impact · Advantages", "title": "Why it wins", "sum": "The advantages that compound.", "cards": [["Cell & subcellular resolved", "dag", "single-cell + GO-CC", "Knows where the drug acts."], ["Selective-TYK2-correct", "shield", "exclude JAK1/IL-10/JAK2", "No false tofacitinib transfer."], ["Genetic & PGx anchoring", "mr", "IL23R / TYK2 P1104A", "Genotype-aware selection."], ["Trial enrichment", "rank", "CCS / PSI", "Smaller, faster Ph2a CD."]]}, {"ch": 6, "kind": "hero", "big": "Causal. Cell-resolved.<br><span class=\"acc\">Defensible.</span>", "lead": "BiRAGAS turns the TYK2 biology into a TAK-279 companion-diagnostic hypothesis and a de-risked path to higher drug efficacy."}];
+const DURS=[17.26, 21.84, 20.11, 13.37, 25.46, 21.79, 19.18, 13.1, 22.99, 22.82, 18.96, 11.86, 23.66, 22.7, 20.62, 19.8, 6.77, 18.02, 9.36, 16.61, 19.18, 6.19, 17.4, 22.78, 13.8];
+
+// ===== build chapters map =====
+const mapEl=document.getElementById("map");
+mapEl.innerHTML=CH.map((c,i)=>`<div class="nd" id="mn${i}" style="--c:${c.color}"><div class="chip">${c.short}</div></div>`+(i<CH.length-1?'<span class="sep">→</span>':'')).join("");
+function setMap(ci){CH.forEach((c,i)=>document.getElementById("mn"+i).classList.toggle("on",i===ci));}
+// ===== build scenes + 3D =====
+const S3D={}; const stage=document.getElementById("stage"); const SC=[];
+SCENES.forEach((sc,i)=>{
+  const col=CH[sc.ch].color, num=CH[sc.ch].num;
+  if(sc.kind==="hero"){
+    SC.push({ch:sc.ch,html:`<div class="scene" style="--c:${col}"><div class="mol hero" data-key="__hero"></div><div class="big">${sc.big}</div>`+(sc.lead?`<div class="lead">${sc.lead}</div>`:``)+`</div>`});
+  }else{
+    const cards=sc.cards.map((m,j)=>{const key=`k${i}_${j}`;const mo=M[m[1]]||M.dag;S3D[key]=buildScene(mo.n,mo.e,num);
+      return `<div class="card" style="--c:${col}"><div class="symrow"><div class="gsvg-wrap">${glyph2d(m[1])}</div><div class="mol" data-key="${key}"></div></div><div class="meta"><div class="nm">${m[0]}</div><div class="algo">${m[2]}</div><div class="desc">${m[3]}</div></div></div>`;}).join("");
+    SC.push({ch:sc.ch,html:`<div class="scene" style="--c:${col}"><div class="count">${i} / ${SCENES.length-1}</div><div class="ph-eyebrow">${sc.eyebrow}</div><div class="ph-title">${sc.title}</div><div class="ph-sum">${sc.sum}</div><div class="cards">${cards}</div></div>`});
+  }
+});
+S3D["__hero"]=makeHero();
+stage.innerHTML=SC.map(s=>s.html).join("");
+const sceneEls=[...stage.querySelectorAll(".scene")]; const N_SC=SC.length;
+// ===== render loop =====
+let t0=performance.now();
+function frame(){const t=(performance.now()-t0)/1000;renderer.setScissorTest(false);renderer.clear();renderer.setScissorTest(true);
+  const active=document.querySelector(".scene.active");
+  if(active){active.querySelectorAll(".mol").forEach(el=>{const r=el.getBoundingClientRect();if(r.width<4||r.height<4||r.bottom<0||r.top>innerHeight)return;
+    const S=S3D[el.dataset.key];if(!S)return;const y=innerHeight-r.bottom;
+    renderer.setViewport(r.left,y,r.width,r.height);renderer.setScissor(r.left,y,r.width,r.height);
+    camera.aspect=r.width/r.height;camera.updateProjectionMatrix();
+    S.group.rotation.y=t*S.spin+S.phase;S.group.rotation.x=0.16*Math.sin(t*0.4+S.phase);renderer.render(S.scene,camera);});}
+  requestAnimationFrame(frame);}
+frame();
+// ===== controller =====
+const vo=document.getElementById("vo");let cur=-1,timer=null,audioOn=true;
+const prog=document.getElementById("prog"),nb=document.getElementById("narrate"),replay=document.getElementById("replay");
+function go(i){clearTimeout(timer);if(i>=N_SC){finish();return;}if(i<0)i=0;
+ sceneEls.forEach(s=>s.classList.remove("active"));sceneEls[i].classList.add("active");
+ cur=i;setMap(SC[i].ch);prog.style.width=((i+1)/N_SC*100)+"%";
+ vo.pause();if(audioOn){vo.src="audio/s"+String(i).padStart(2,"0")+".mp3";try{vo.currentTime=0;vo.play().catch(()=>{});}catch(e){}}
+ const dur=((DURS[i]||6)*1000)+700;timer=setTimeout(()=>go(i+1),dur);}
+function finish(){clearTimeout(timer);sceneEls.forEach(s=>s.classList.remove("active"));sceneEls[N_SC-1].classList.add("active");setMap(CH.length-1);prog.style.width="100%";replay.style.display="inline-block";}
+function start(){document.getElementById("begin").style.display="none";replay.style.display="none";go(0);}
+document.getElementById("beginBtn").addEventListener("click",e=>{e.stopPropagation();start();});
+document.getElementById("begin").addEventListener("click",start);
+document.getElementById("next").onclick=()=>go(cur+1);
+document.getElementById("prev").onclick=()=>go(Math.max(0,cur-1));
+replay.onclick=start;
+nb.onclick=()=>{audioOn=!audioOn;nb.textContent=audioOn?"🔊 Narrate":"🔇 Muted";if(!audioOn)vo.pause();else if(cur>=0){vo.src="audio/s"+String(cur).padStart(2,"0")+".mp3";vo.play().catch(()=>{});}};
+addEventListener("keydown",e=>{if(cur<0)return;if(e.key==="ArrowRight"||e.key===" ")go(cur+1);else if(e.key==="ArrowLeft")go(cur-1);});
+
+
+
+// ===== pause / home controls + advance-aware wrapper =====
+const pauseBtn=document.getElementById("pause"),homeBtn=document.getElementById("home");
+let paused=false;
+const _origGo=go;
+go=function(i){paused=false;if(pauseBtn)pauseBtn.textContent="\u23F8 Pause";return _origGo(i);};
+pauseBtn.onclick=()=>{
+  if(!paused){paused=true;clearTimeout(timer);vo.pause();pauseBtn.textContent="\u25B6 Resume";}
+  else{paused=false;pauseBtn.textContent="\u23F8 Pause";
+    if(audioOn){vo.play().catch(()=>{});}
+    const rem=((audioOn&&vo.duration&&isFinite(vo.duration))?Math.max(0.3,vo.duration-vo.currentTime):(DURS[cur]||6))*1000+700;
+    clearTimeout(timer);timer=setTimeout(()=>go(cur+1),rem);}
+};
+homeBtn.onclick=()=>{document.getElementById("stage").scrollTop=0;go(0);};
+addEventListener("keydown",e=>{if(e.key==="p"||e.key==="P")pauseBtn.click();else if(e.key==="Home")homeBtn.click();});
+
+</script>
+</body></html>
